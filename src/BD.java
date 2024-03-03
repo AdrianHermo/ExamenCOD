@@ -16,4 +16,16 @@ public class BD {
         return conexion.getMetaData().getDatabaseProductName();
     }
 
+    /**
+     * Metodo para cerrar la conexion
+     */
+    public void cerrarConexion() {
+        // cerramos la conexion
+        try {
+            DriverManager.getConnection("jdbc:mysql://localhost:3306/Ex", "root", "root").close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
